@@ -1,7 +1,11 @@
 
 function Login() {
   return (
-    <div>Login</div>
+    <div className="max-w-[80rem] mx-auto">
+        <div>
+            456
+        </div>
+    </div>
   )
 }
 
