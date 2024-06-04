@@ -15,7 +15,7 @@ function AuthContextProvider(props) {
                     return
                 }
 
-                const rs = await axios.get("http://192.168.45.21:1506/api/me", {
+                const rs = await axios.get("http://192.168.42.139/api/me", {
                     headers: { Authorization: `Bearer ${token}`}
                 })
 
@@ -34,7 +34,7 @@ function AuthContextProvider(props) {
     }
 
     return (
-        <AuthContext.Provider value={{ user, logout }}>
+        <AuthContext.Provider value={{ user, setUser, logout }}>
             {props.children}
         </AuthContext.Provider>
     )
