@@ -19,13 +19,11 @@ function Index() {
         }
     };
 
-    console.log(user.fullname)
-
     const startIndex = (currentPage - 1) * rowsPerPage;
     const selectedData = person.slice(startIndex, startIndex + rowsPerPage);
 
     const hdlChange = (e) => {
-        setRowsPerPage(e.target.value);
+        setRowsPerPage(Number(e.target.value));
         setCurrentPage(1);
     };
 
