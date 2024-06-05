@@ -10,13 +10,15 @@ function PersonContextProvider(props) {
     useEffect(() => {
         const run = async () => {
             try {
+                const date = new Date().toISOString().split('T')[0];
                 let token = localStorage.getItem('token')
-                const rs = await axios.get('http://192.168.42.139/api/dashboard/person/2024-06-04', {
+                if(!token) return
+                const rs = await axios.get(`http://192.168.42.139/api/dashboard/person/${date}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 })
-                setPerson(rs?.data?.responese.recordset)
+                setPerson(rs?.data?.responese.recordsets[0])
             } catch (err) {
                 console.log(err.responese?.data?.message)
             }

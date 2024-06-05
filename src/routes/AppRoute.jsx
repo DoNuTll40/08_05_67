@@ -20,7 +20,9 @@ const userRouter = createBrowserRouter([
     {
         path: '/',
         element: <>
+        <PersonContextProvider>
             <Outlet />
+        </PersonContextProvider>
         </>,
         children: [
             { index: true, element: <Index /> }

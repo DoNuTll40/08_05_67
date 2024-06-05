@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { AuthContextProvider } from './contexts/AppContext.jsx'
-import { PersonContextProvider } from './contexts/PersonContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthContextProvider>
-      <PersonContextProvider>
         <App />
-      </PersonContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,
 )
